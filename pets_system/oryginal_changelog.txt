@@ -1,0 +1,46 @@
+v1.77
+	simple bugfix for 'version' and 'help' command
+v1.76
+	removed creatureevent "PetAttack"
+	fixed getPlayerPet and setPlayerPet
+v1.75
+	added 'heal' command
+	health lost * healCost + healCostBase = cost to be payed
+	health lost * healSoul + healSoulBase = soul to be payed
+	*soul to be payed cannot exceed 100
+v1.74
+	hpAdd now defaults to the value you set in the config.
+	added sameSpeed, set it to true to allow the pet to be the same speed as the owner.
+v1.73
+	added hpAdd, amount of max health added when the pet levels. defaults to 5.
+v1.72
+	fixed another bug in buying pets
+v1.71
+	fixed bug in onPrepareDeath
+v1.7
+	added support for custom requirements
+	added ability to add more information to 'info' command
+v1.6
+	added more pets
+	added 'revive' command
+v1.5
+	fixed bug where the pet only levels when it is greater than the level to evolve
+	added 'release' command
+v1.41
+	fixed bug where you can buy 2 pets
+v1.4
+	added leveling up
+v1.31
+	fixed 'list' command
+v1.3
+	added evolution
+	added buyable/unbuyable pets
+v1.2
+	added 'speak' command
+	added 'version' command
+v1.11
+	fixed one line
+v1.1
+	rewrote most of it again, fixed some bugs
+v1.0
+	started from scratch
