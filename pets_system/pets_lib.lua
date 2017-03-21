@@ -10,6 +10,9 @@ PETS = {
         introduction = "You may catch pets using command '!petcatch'. If your pet dies, you have to revive it in order to re-summon it. Some pets have a special requirement in order to catch them, some cannot be catched at all and can only be gotten by evolution. Type 'commands' for a list of available commands.",
         sameSpeed = true,
 
+        healSoulCost = 0.1,
+        healSoulBase = 10,
+
         healOnLevelUp = true,
         standardHpAdd = 5,
         expMultipler = 1,
