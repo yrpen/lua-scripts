@@ -425,3 +425,21 @@ function Player.canGetPet(self, petId)
     return PETS.IDENTIFICATION[petId].check
 end
 
+-- is Pet
+function Player.isPet(self)
+    return false
+end
+
+function Npc.isPet(self)
+    return false
+end
+
+function Monster.isPet(self)
+    if self:isSummon() then
+        local owner = self:getMaster()
+        if owner:isPlayer() and owner:getPetUid() == self:getId() then
+            return true
+        end
+    end
+    return false
+end
