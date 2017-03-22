@@ -16,7 +16,9 @@ PETS = {
         healOnLevelUp = true,
         standardHpAdd = 5,
         expMultipler = 1,
-        maxLevel = 10,
+        shareExpMultipler = 0.3,
+        maxLevel = 30,
+
         reviveSoulBaseCost = 50,
         reviveSoulLevelCost = 0.2
     },
@@ -24,7 +26,8 @@ PETS = {
     SYSTEM = {
         EVOLUTION = true,
         MOUNTS = false,
-        TELEPORT = true
+        TELEPORT = true,
+        PLAYER_SHARE_EXPERIENCE = false
     },
 
     IDENTIFICATION = {

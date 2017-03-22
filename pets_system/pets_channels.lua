@@ -13,7 +13,7 @@ function onJoin(player)
         
     elseif petUid == PETS.CONSTANS.STATUS_MOUNT then
         player:petSystemMessage("Your pet is a mount.")
-	player:setPetUid(PETS.CONSTANS.OK)
+        player:setPetUid(PETS.CONSTANS.OK)
         
     end
     return true

@@ -62,4 +62,8 @@ Register xml file in monsters.xml.
 Create table in pet_lib.lua  
 **Clarify this!**
   
+```
+<event class="Player" method="onGainExperience" enabled="1" />
+```
+
 
