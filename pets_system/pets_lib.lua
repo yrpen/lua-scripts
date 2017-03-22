@@ -27,7 +27,8 @@ PETS = {
         EVOLUTION = true,
         MOUNTS = false,
         TELEPORT = true,
-        PLAYER_SHARE_EXPERIENCE = false
+        PLAYER_SHARE_EXPERIENCE = false,
+	DUELS_ONLY = false
     },
 
     IDENTIFICATION = {
