@@ -253,6 +253,7 @@ function Player.setPetLostHealth(self, health)
     return self:setStorageValue(PETS.STORAGE.LOSTHEALTH, health)
 end
 
+-- other
 function Player.doAddPet(self, petType)
     local pet = Creature(self:getStorageValue(PETS.STORAGE.UID))
     if pet then
@@ -405,6 +406,9 @@ function Player.addPetExp(self, amount)
             self:petSystemMessage("Your pet "..(PETS.IDENTIFICATION[petType]).name.." has evolved to a "..((PETS.IDENTIFICATION[(PETS.IDENTIFICATION[petType]).evolve.to]).name)..".")
             self:summonPet(position)
         end
+
+        -- save max hp fix
+        self:setPetMaxHealth(pet:getMaxHealth())
     end
 
     return true
