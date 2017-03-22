@@ -327,6 +327,10 @@ function Player.summonPet(self, position)
         return false
     end
 
+    if (Tile(position)):hasFlag(TILESTATE_PROTECTIONZONE) then
+      return false
+    end
+
     if PETS.SYSTEM.MOUNTS then
         local mountId = self:getPetMountId()
         local currentMount = self:getOutfit()['lookMount']
