@@ -1,5 +1,7 @@
 -- <event type="preparedeath" name="PetDeath" script="pet_creaturescript.lua" />
 -- <event type="kill" name="PetKill" script="pet_creaturescript.lua" />
+-- <event type="think" name="PetTeleport" script="pet_creaturescript.lua" />
+-- <event type="healthchange" name="PetHealthChange" script="pet_creaturescript.lua" />
 
 function onPrepareDeath(creature, killer)
     local player = creature:getMaster()
@@ -39,4 +41,12 @@ function onThink(creature, interval)
 
     end
     return true
+end
+
+function onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
+    if attacker and attacker:isPlayer() then
+        return 0, primaryType, 0, secondaryType
+    end
+
+    return primaryDamage, primaryType, secondaryDamage, secondaryType
 end

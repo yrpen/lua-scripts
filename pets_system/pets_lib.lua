@@ -363,6 +363,10 @@ function Player.summonPet(self, position)
             pet:registerEvent("PetTeleport")
         end
 
+        if PETS.SYSTEM.DUELS_ONLY then
+            pet:registerEvent("PetHealthChange")
+        end
+
         if PETS.SYSTEM.MOUNTS then
             local mountId = self:getPetMountId()
             if mountId ~= nil then
