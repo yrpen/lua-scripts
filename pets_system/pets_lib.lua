@@ -384,6 +384,11 @@ function getExpNeeded(level)
 end
 
 function Player.addPetExp(self, amount)
+    local pet = Creature(petUid)
+    if not pet then
+        return false
+    end
+
     if self:getPetLevel() >= PETS.CONFIG.maxLevel then
         return false
     end
@@ -393,7 +398,6 @@ function Player.addPetExp(self, amount)
     local petLevel, petType, petUid = self:getPetLevel(), self:getPetType(), self:getPetUid()
 
     if totalExp >= getExpNeeded(petLevel + 1) then
-        local pet = Creature(petUid)
         pet:setMaxHealth(pet:getMaxHealth() + (PETS.IDENTIFICATION[petType].hpAdd or PETS.CONFIG.standardHpAdd))
         self:setPetLevel(petLevel +1)
         self:petSystemMessage("Your pet "..PETS.IDENTIFICATION[petType].name.." has advanced to level "..(petLevel +1)..".")
