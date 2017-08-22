@@ -91,7 +91,7 @@ Options:
   * check - check if player can tame pet (function or boolean value)
   * info - additional onLook description
   
-_**4. How work teleportation system?**_  
+_**4. How work teleport system?**_  
 If distance between a pet and player is higher than 7 sqm or pet is on diffrent floor level,  
 then script teleport pet to owner position.  
   
@@ -107,7 +107,7 @@ Yes.
 _**6. Player share experience**_  
 If it's set to true, then pet get exp everytime, when player gets exp.  
   
-_**7. Duels only**_
+_**7. Duels only**_  
 If it's set to true, then pet can't attack any player.
   
 ## Installation
@@ -117,6 +117,7 @@ dofile('data/lib/pets_lib.lua')
 ```
   
 put file _**pets\_lib.lua**_ into directory _**data/lib/**_  
+  
 add in _**data/chatchannels/chatchannels.xml**_  
 ```
 <channel id="10" name="Pet" script="pet.lua" />
