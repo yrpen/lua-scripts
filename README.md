@@ -97,7 +97,7 @@ then script teleport pet to owner position.
   
 _**5. Mount system**_  
 _**5a) How it work?**_  
-When player catch monster, and monster have in configuration set mount id, then mount is added to player.  
+When player catch monster with mount id in configuration, then mount is added to him.  
 Player can't mount dead pet and can't in same time ride on him and use as summon.  
 When player summon pet, then this pet-summon is removed from player mounts list.  
   
