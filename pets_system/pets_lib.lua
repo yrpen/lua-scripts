@@ -384,7 +384,7 @@ function getExpNeeded(level)
 end
 
 function Player.addPetExp(self, amount)
-    local pet = Creature(petUid)
+    local pet = Creature(self:getPetUid())
     if not pet then
         return false
     end
