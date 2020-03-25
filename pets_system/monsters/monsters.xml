@@ -21,3 +21,8 @@
     <monster name="PET_Mammoth" file="pets/mammoth.xml"/>
     <monster name="PET_Snake" file="pets/snake.xml"/>
     <monster name="PET_Cobra" file="pets/cobra.xml"/>
+
+    <monster name="PET_Werewolf" file="pets/werewolf.xml" />
+    <monster name="PET_Panda" file="pets/panda.xml" />
+    <monster name="PET_Dragon Hatchling" file="pets/dragon_hatchling.xml" />
+    <monster name="PET_Dragon" file="pets/dragon.xml" />
