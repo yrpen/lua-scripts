@@ -376,6 +376,11 @@ function Player.summonPet(self, position)
 
         return pet
     end
+
+    local petMonsterType = MonsterType(PETS.PREFIX .. (PETS.IDENTIFICATION[self:getPetType()].name))
+    if not petMonsterType then
+        print('[PET-SYSTEM] Cant find monster type: ' .. PETS.PREFIX .. (PETS.IDENTIFICATION[self:getPetType()].name) )
+    end
     return false
 end
 
