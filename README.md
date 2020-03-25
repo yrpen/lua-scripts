@@ -22,7 +22,7 @@
   * hunger system
   * carry items
   * take a look at http://www.xtibia.com/forum/topic/241890-addon-system-fly-ride-surf-look-e-evolution/
-  * potions used by monsters [hyperlink censored due otland blacklist]
+  * potions used by monsters https://otland.net/threads/make-monsters-use-health-potions.232445/
   * additional attacks
 
 ## Options inside pet\_lib.lua
