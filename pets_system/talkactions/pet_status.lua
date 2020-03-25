@@ -6,6 +6,8 @@ function onSay(player, words, param, channel)
         text = "You don't have a pet."
     elseif petUid == PETS.CONSTANS.STATUS_DEAD then
         text = "Your pet is dead."
+    elseif petUid == PETS.CONSTANS.STATUS_MOUNT then
+        text = "Your pet is mounted."
     else
         local pet = Creature(petUid)
         if pet ~= nil and pet:isCreature() then

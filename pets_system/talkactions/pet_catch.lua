@@ -2,13 +2,14 @@
 function onSay(player, words, param, channel)
     local target = player:getTarget()
     local ropeId = 2120
+    local petUid = player:getPetUid()
 
     if player:getItemCount(ropeId) == 0 then
         player:petSystemMessage('You need a rope to catch any monster.')
         return true
     end
 
-    if player:getPetUid() > -1 then
+    if petUid != PETS.CONSTANS.STATUS_DOESNT_EXIST and petUid != PETS.CONSTANS.STATUS_DEAD and petUid != PETS.CONSTANS.STATUS_MOUNT then
         player:petSystemMessage("You alredy have a pet!")
         return true
     end

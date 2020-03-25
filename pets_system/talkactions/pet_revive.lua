@@ -4,7 +4,7 @@ function onSay(player, words, param, channel)
     if petUid == PETS.CONSTANS.STATUS_DOESNT_EXIST then
         player:petSystemMessage("You don't have a pet!")
 
-    elseif petUid >= 0 then
+    elseif petUid >= PETS.CONSTANS.STATUS_OK then
         player:petSystemMessage("Your pet is still alive!")
 
     elseif petUid == PETS.CONSTANS.STATUS_DEAD then
