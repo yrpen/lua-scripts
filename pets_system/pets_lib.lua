@@ -449,11 +449,10 @@ function Npc.isPet(self)
 end
 
 function Monster.isPet(self)
-    if self:isSummon() then
-        local owner = self:getMaster()
-        if owner:isPlayer() and owner:getPetUid() == self:getId() then
-            return true
-        end
+    local owner = self:getMaster()
+    if owner:isPlayer() and owner:getPetUid() == self:getId() then
+        return true
     end
     return false
 end
+

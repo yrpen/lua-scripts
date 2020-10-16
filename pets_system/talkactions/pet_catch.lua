@@ -9,7 +9,7 @@ function onSay(player, words, param, channel)
         return true
     end
 
-    if petUid != PETS.CONSTANS.STATUS_DOESNT_EXIST and petUid != PETS.CONSTANS.STATUS_DEAD and petUid != PETS.CONSTANS.STATUS_MOUNT then
+    if petUid ~= PETS.CONSTANS.STATUS_DOESNT_EXIST and petUid ~= PETS.CONSTANS.STATUS_DEAD and petUid ~= PETS.CONSTANS.STATUS_MOUNT then
         player:petSystemMessage("You alredy have a pet!")
         return true
     end
