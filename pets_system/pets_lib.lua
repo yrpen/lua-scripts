@@ -289,6 +289,8 @@ function Player.doRemovePet(self)
     local petUid = self:getPetUid()
     local pet = Creature(petUid)
 
+    self:setPetUid(PETS.CONSTANS.STATUS_OK)
+
     if not pet or not pet:isCreature() then
         return true
     end
@@ -296,7 +298,6 @@ function Player.doRemovePet(self)
 
     self:setPetMaxHealth(maxHealth)
     self:setPetLostHealth(maxHealth - pet:getHealth() )
-    self:setPetUid(PETS.CONSTANS.STATUS_OK)
 
     pet:remove()
 
