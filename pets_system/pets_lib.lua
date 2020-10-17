@@ -289,9 +289,10 @@ function Player.doRemovePet(self)
     local petUid = self:getPetUid()
     local pet = Creature(petUid)
 
-    self:setPetUid(PETS.CONSTANS.STATUS_OK)
-
     if not pet or not pet:isCreature() then
+		if petUid > 0 then
+            self:setPetUid(PETS.CONSTANS.STATUS_OK)
+		end
         return true
     end
     local maxHealth = pet:getMaxHealth()
@@ -455,5 +456,79 @@ function Monster.isPet(self)
         return true
     end
     return false
+end
+
+-- additional functions
+function Position.getSurroundings(self)
+  local return_array = {}
+  local coordinates = {
+    {x = self.x +1, y = self.y, z = self.z},
+    {x = self.x -1, y = self.y, z = self.z},
+    {x = self.x +1, y = self.y +1, z = self.z},
+    {x = self.x, y = self.y +1, z = self.z},
+    {x = self.x -1, y = self.y +1, z = self.z},
+    {x = self.x +1, y = self.y -1, z = self.z},
+    {x = self.x, y = self.y -1, z = self.z},
+    {x = self.x -1, y = self.y -1, z = self.z}
+  }
+
+  for _, coordinate in pairs(coordinates) do
+    table.insert(return_array, Position(coordinate))
+  end
+  return return_array
+end
+
+-- PET tools
+function Monster.dig(self)
+  if not self:isPet() then
+    return false
+  end
+
+  local return_value = false
+
+  local position = self:getPosition()
+  local surroundings = position:getSurroundings()
+  local HOLE_LIST = {468, 481, 483, 7932}
+
+  local function _tmp_dig_in_tile(creature, tile, position)
+    if not tile then
+      return false
+    end
+
+    if tile:getCreatureCount() ~= 0 then
+      return false
+    end
+
+    if tile:getItemCount() ~= 0 then
+      return false
+    end
+
+    local ground = tile:getGround()
+
+    if not ground then
+      return false
+    end
+
+    local groundId = ground:getId()
+
+    if not isInArray(HOLE_LIST, groundId) then
+      return false
+    end
+
+    ground:transform(groundId + 1)
+    ground:decay()
+    position:sendMagicEffect(CONST_ME_POFF)
+    return true
+  end
+
+  for _, next_position in pairs(surroundings) do
+    local next_tile = Tile(next_position)
+
+    if _tmp_dig_in_tile(self, next_tile, next_position) then
+      return_value = true
+    end
+  end
+
+  return return_value
 end
 
